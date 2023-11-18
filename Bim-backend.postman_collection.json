@@ -1,0 +1,739 @@
+{
+	"info": {
+		"_postman_id": "6d01f0b1-1bb7-4a67-b7c8-44d271ab1cf6",
+		"name": "Bim-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3039084",
+		"_collection_link": "https://interstellar-trinity-88278.postman.co/workspace/My-Workspace~1624ea1a-05c6-41fb-8f19-faed217c8445/collection/3039084-6d01f0b1-1bb7-4a67-b7c8-44d271ab1cf6?action=share&source=collection_link&creator=3039084"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8000/api/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "Login"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@admin.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:02:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:02:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"token\": \"4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff\",\n        \"name\": \"admin\"\n    },\n    \"message\": \"User login successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/addTransaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "payer",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "50000",
+							"type": "text"
+						},
+						{
+							"key": "due_on",
+							"value": "2023-11-15 20:00:00",
+							"type": "text"
+						},
+						{
+							"key": "vat",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "is_vat_inclusive",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/addTransaction",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"addTransaction"
+					]
+				},
+				"description": "Add transaction and mange Status of transaction"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/addTransaction",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "payer",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "50000",
+									"type": "text"
+								},
+								{
+									"key": "due_on",
+									"value": "2023-11-15 20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "vat",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "is_vat_inclusive",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addTransaction",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addTransaction"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:03:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:03:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 6,\n        \"user_id\": \"2\",\n        \"due_date\": \"2023-11-15 20:00:00\",\n        \"amount\": \"50000\",\n        \"vat\": \"5\",\n        \"is_vat_include\": \"1\",\n        \"status\": null,\n        \"created_at\": \"17/11/2023\",\n        \"updated_at\": \"17/11/2023\"\n    },\n    \"message\": \"Transaction created successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/addPayment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "transaction_id",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "amount",
+							"value": "500",
+							"type": "text"
+						},
+						{
+							"key": "paid_on",
+							"value": "2023-11-05 16:32:00",
+							"type": "text"
+						},
+						{
+							"key": "details",
+							"value": "detail",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/addPayment",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"addPayment"
+					]
+				},
+				"description": "Add payment to specific transaction and affect status of transaction due to payment"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/addPayment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "transaction_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "500",
+									"type": "text"
+								},
+								{
+									"key": "paid_on",
+									"value": "2023-11-05 16:32:00",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "detail",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addPayment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addPayment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:03:43 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Nov 2023 17:03:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 15,\n        \"transaction_id\": \"2\",\n        \"pay_date\": \"2023-11-05 16:32:00\",\n        \"amount\": \"500\",\n        \"details\": \"detail\",\n        \"created_at\": \"17/11/2023\",\n        \"updated_at\": \"17/11/2023\"\n    },\n    \"message\": \"Payment created successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/viewTransaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/viewTransaction",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"viewTransaction"
+					]
+				},
+				"description": "View Transaction and its details \r\nif login is admin view all transactions and details \r\nif login is user view his only transaction"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/viewTransaction",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/viewTransaction",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"viewTransaction"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 06:19:27 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 06:19:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-15 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Paid\",\n            \"created_at\": \"15/11/2023\",\n            \"updated_at\": \"15/11/2023\",\n            \"payments\": []\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-30 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Outstanding\",\n            \"created_at\": \"15/11/2023\",\n            \"updated_at\": \"17/11/2023\",\n            \"payments\": [\n                {\n                    \"id\": 1,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": null,\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 2,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": null,\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 3,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": null,\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 4,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": null,\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 5,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 6,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 7,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 8,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 9,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 10,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 11,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 12,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 13,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 14,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"16/11/2023\",\n                    \"updated_at\": \"16/11/2023\"\n                },\n                {\n                    \"id\": 15,\n                    \"transaction_id\": 2,\n                    \"pay_date\": \"2023-11-05 16:32:00\",\n                    \"amount\": 500,\n                    \"details\": \"detail\",\n                    \"created_at\": \"17/11/2023\",\n                    \"updated_at\": \"17/11/2023\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-15 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Paid\",\n            \"created_at\": \"15/11/2023\",\n            \"updated_at\": \"15/11/2023\",\n            \"payments\": []\n        },\n        {\n            \"id\": 4,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-15 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Outstanding\",\n            \"created_at\": \"15/11/2023\",\n            \"updated_at\": \"15/11/2023\",\n            \"payments\": []\n        },\n        {\n            \"id\": 5,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-15 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Outstanding\",\n            \"created_at\": \"15/11/2023\",\n            \"updated_at\": \"15/11/2023\",\n            \"payments\": []\n        },\n        {\n            \"id\": 6,\n            \"user_id\": 2,\n            \"due_date\": \"2023-11-15 20:00:00\",\n            \"amount\": 50000,\n            \"vat\": 5,\n            \"is_vat_include\": 1,\n            \"status\": \"Outstanding\",\n            \"created_at\": \"17/11/2023\",\n            \"updated_at\": \"17/11/2023\",\n            \"payments\": []\n        }\n    ],\n    \"message\": \"Transaction listed successfully.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/api/monthlyReport/2023-11-01/2023-11-30",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/monthlyReport/2023-11-01/2023-11-30",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"monthlyReport",
+						"2023-11-01",
+						"2023-11-30"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "app",
+							"disabled": true
+						}
+					]
+				},
+				"description": "As an admin view report of specific period"
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/monthlyReport/2023-11-01/2023-11-30",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 4|xXiF4bCSDYKPlv4ouGxtqurHQMMtgH4y5FPDmM32cf8d76ff",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/monthlyReport/2023-11-01/2023-11-30",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"monthlyReport",
+								"2023-11-01",
+								"2023-11-30"
+							],
+							"query": [
+								{
+									"key": "Accept",
+									"value": "app",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 08:57:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Nov 2023 08:57:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.1.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"month\": 11,\n            \"year\": 2023,\n            \"paid\": 300000,\n            \"outstanding\": 0,\n            \"overdue\": 0\n        }\n    ],\n    \"message\": \"Report records is listed successfully.\"\n}"
+				}
+			]
+		}
+	]
+}

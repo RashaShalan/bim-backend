@@ -17,7 +17,7 @@ use DB;
 
 class ApiController extends BaseController
 {
-    //
+    
     /**
      * add Transaction to the company as admin
      */
@@ -26,7 +26,6 @@ class ApiController extends BaseController
         $user=auth()->id();
         $is_admin= json_decode(Auth::user());
         $input = $request->all();
-       // dd($is_admin);
        
         if($is_admin->is_admin==1)  
         {
@@ -66,7 +65,6 @@ class ApiController extends BaseController
         $date = Carbon::parse($due_date)->format('m/d/Y H:i:s');
          $compare_date = Carbon::createFromFormat('m/d/Y H:i:s',$date);
 
-       // dd($compare_date);
          $today = Carbon::now();
 
   
@@ -86,7 +84,6 @@ class ApiController extends BaseController
         $user=auth()->id();
         $is_admin= json_decode(Auth::user());
         
-       // dd($is_admin);
         
         $input = $request->all();
         if($is_admin->is_admin==1)  
@@ -126,10 +123,7 @@ class ApiController extends BaseController
     public function paymentStatus($transaction_id)
     {
         $totalPayment=payment::where('transaction_id',$transaction_id)->sum('amount');
-        //dd($totalPayment);
         $transaction=transaction::find($transaction_id);
-       // dd($transaction);
-       echo 'TotalPayment ='.floatval($totalPayment)." -----  Transaction amount =".floatval($transaction->amount);
      
         if(floatval($transaction->amount)==floatval($totalPayment))
         {
@@ -203,11 +197,9 @@ class ApiController extends BaseController
             }
         
             $report= $transacation_report->get();
-            // dd($report);
             $reports=[];
             foreach($report as $repo)
             {
-            //  dd($repo);
                     $reports[]=[
                         'month'=>$repo->monthNum,
                         'year'=>$repo->yearNum,
